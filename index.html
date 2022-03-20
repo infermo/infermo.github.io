@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="tabulator.js">
+
+    </script>
+    <title> 1234 </title>
+</head>
+
+<body>
+    <header class="header">
+        <img class="logo" src="images/logo.jpg" width='60' heigth='60' alt="" align="left">
+        <div class="text">
+            Банк <br>Центр-Инвест
+        </div>
+    </header>
+
+    <div class="intro">
+        <img class="chel" src="images/undraw_investment_re_rpk5_1.svg">
+        <p class="text_2">
+            Инвестировать - <br>просто
+        </p>
+    </div>
+    <!-- <form action="http://porkfarm-001-site1.dtempurl.com/test/"> -->
+    <div class="inner" align="center">
+        <p>
+            Сумма вложения
+        </p>
+        <input type="text" name="sum" class="input_box" id="1">
+        <p>
+            Допустимый уровень риска
+        </p>
+        <input type="range" min="0" name="risk" max="100" id="2" step="2.5" value="0">
+        <p>
+            Срок портфеля
+        </p>
+        <input type="range" min="1" name="term" max="10" id="3" step="1" value="0">
+    </div>
+    <div class="kostyl" align="center">
+        <button id="button228" class="button-36"" name =" zalupa">Сформировать портфел</button>
+    </div>
+    </div>
+    <div id="ZdesBilTablitza">
+        <script>
+        </script>
+    </div>
+</body>
+<script>
+    var str = "";
+    var buttonSubmit = document.getElementById("button228");
+    buttonSubmit.onclick = function () {
+        postData()
+        //console.log("хуху")
+    };
+
+    function postData() { //console.log("хуху")
+        var url = doApi();
+
+        // Default options are marked with *
+        const response = fetch(url, {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'no-cors', // no-cors, *cors, same-origin
+            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *client
+            body: JSON.stringify() // body data type must match "Content-Type" header
+        });
+        //console.log("хуху")
+        str = response.json;
+
+        var string = "";
+        var tableEbat = GenerateSuperTablePlease();
+        tableEbat.forEach(element => {
+           string=string+element;  
+        });
+        document.getElementById(string);
+
+        console.log(str)
+        //return await response; // parses JSON response into native JavaScript objects
+    }
+    function doApi() {
+        var sum = document.getElementById("1").value;
+        var risk = document.getElementById("2").value;
+        var term = document.getElementById("3").value;
+        console.log("cucarecy");
+        return uri = 'http://porkfarm-001-site1.dtempurl.com/test/' + sum + ";" + risk + ";" + term;
+
+    }
+</script>
+
+</html>
