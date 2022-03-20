@@ -1,6 +1,5 @@
 GenerateSuperTablePlease = function()
 {
-
 var myList = {
     "array": [
       {

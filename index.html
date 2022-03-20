@@ -12,7 +12,7 @@
     <script type="text/javascript" src="tabulator.js">
 
     </script>
-    <title> 1234 </title>
+    <title> ReadLine </title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
         <input type="range" min="1" name="term" max="10" id="3" step="1" value="0">
     </div>
     <div class="kostyl" align="center">
-        <button id="button228" class="button-36"" name =" zalupa">Сформировать портфел</button>
+        <button id="button228" class="button-36"" name =" zalupa">Сформировать портфель</button>
     </div>
     </div>
     <div id="ZdesBilTablitza">
@@ -60,10 +60,8 @@
         postData()
         //console.log("хуху")
     };
-
     function postData() { //console.log("хуху")
         var url = doApi();
-
         // Default options are marked with *
         const response = fetch(url, {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -80,14 +78,12 @@
         });
         //console.log("хуху")
         str = response.json;
-
         var string = "";
         var tableEbat = GenerateSuperTablePlease();
         tableEbat.forEach(element => {
-           string=string+element;  
+           string = string + element;  
         });
         document.getElementById(string);
-
         console.log(str)
         //return await response; // parses JSON response into native JavaScript objects
     }
@@ -95,7 +91,7 @@
         var sum = document.getElementById("1").value;
         var risk = document.getElementById("2").value;
         var term = document.getElementById("3").value;
-        console.log("cucarecy");
+        // console.log("cucarecy");
         return uri = 'http://porkfarm-001-site1.dtempurl.com/test/' + sum + ";" + risk + ";" + term;
 
     }
