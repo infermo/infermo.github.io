@@ -1,6 +1,5 @@
 GenerateSuperTablePlease = function()
 {
-
 var myList = {
     "array": [
       {
@@ -46,11 +45,7 @@ var myList = {
     ]
   }
 for (var i in myList.count){
-  var row = `<tr>
-                    <td>${tableData[i].name} </td>
-                    <td>${tableData[i].count}</td>
-                    <td>${tableData[i].profitability}</td>
-              </tr>`
+  var row = "<tr><td>"+tableData[i].name +"</td><td>" +tableData[i].count + "</td><td>" +tableData[i].profitability+ "</td></tr>"
   var table = '#table-body'
   table.append(row)
 }

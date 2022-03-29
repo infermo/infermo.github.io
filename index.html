@@ -22,7 +22,6 @@
             Банк <br>Центр-Инвест
         </div>
     </header>
-
     <div class="intro">
         <img class="chel" src="images/undraw_investment_re_rpk5_1.svg">
         <p class="text_2">
@@ -48,10 +47,22 @@
         <button id="button228" class="button-36"" name =" zalupa">Сформировать портфель</button>
     </div>
     </div>
-    <div id="ZdesBilTablitza">
+    <table align="center">
+        <thead>
+            <tr>
+                <td>Наименование эмитента</td>
+                <td>Количество ценных бумаг</td>
+                <td>Ожидаемая доходность</td>
+            </tr>
+            <tbody id="table-body">
+
+            </tbody>
+        </thead>
+    </table>
+    <!-- <div id="ZdesBilTablitza">
         <script>
         </script>
-    </div>
+    </div> -->
 </body>
 <script>
     var str = "";
@@ -78,13 +89,67 @@
         });
         //console.log("хуху")
         str = response.json;
+        
+        var myList = {
+    "array": [
+      {
+        "name": "aaa",
+        "count": 1,
+        "profitability": "12%"
+      },
+      {
+        "name": "addda",
+        "count": 3,
+        "profitability": "8%"
+      },
+      {
+        "name": "qqq",
+        "count": 1,
+        "profitability": "1%"
+      },
+      {
+        "name": "aaq",
+        "count": 1,
+        "profitability": "2%"
+      },
+      {
+        "name": "qq",
+        "count": 14,
+        "profitability": "2%"
+      },
+      {
+        "name": "aa",
+        "count": 1,
+        "profitability": "12%"
+      },
+      {
+        "name": "baa",
+        "count": 2,
+        "profitability": "7%"
+      },
+      {
+        "name": "aba",
+        "count": 3,
+        "profitability": "12%"
+      }
+    ]
+  }
+        for (var i in myList.count){
+        var row = `<tr>
+                    <td>${tableData[i].name} </td>
+                    <td>${tableData[i].count}</td>
+                    <td>${tableData[i].profitability}</td>
+              </tr>`
+            var table = $('#table-body')
+            table.append(row)
+}
         var string = "";
         var tableEbat = GenerateSuperTablePlease();
-        tableEbat.forEach(element => {
-           string = string + element;  
-        });
-        document.getElementById(string);
-        console.log(str)
+        // tableEbat.forEach(element => {
+        //    string = string + element;  
+        // });
+        document.getElementById(tableEbat);
+        console.log(uri)
         //return await response; // parses JSON response into native JavaScript objects
     }
     function doApi() {
@@ -92,7 +157,7 @@
         var risk = document.getElementById("2").value;
         var term = document.getElementById("3").value;
         // console.log("cucarecy");
-        return uri = 'http://porkfarm-001-site1.dtempurl.com/test/' + sum + ";" + risk + ";" + term;
+        return uri = '  ' + sum + ";" + risk + ";" + term;
 
     }
 </script>
